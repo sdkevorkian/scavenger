@@ -2,11 +2,21 @@
 /*blue: #1565C0*/
 /*purple: #9C27B0*/
 
+@font-face{
+    font-family: Bernadette;
+    src: url('./fonts/bernadette_rough.ttf');
+}
+
+@font-face {
+    font-family: Ikaros;
+    src: url('./fonts/Ikaros-Light.otf');
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-size: 16px;
+  font-family: Ikaros;
+  font-size: 24px;
   color: #f7b4bb;
   background: url('./images/upfeathers.png'), rgba(21,101,192, 1);
   background-blend-mode: overlay;
@@ -15,8 +25,6 @@ body {
 .container {
     margin: 0 auto;
     text-align: center;
-    min-width: 700px;
-    max-width: 1200px;
     margin-top: 20px;
     background-color: #9C27B0;
 }
@@ -25,8 +33,16 @@ ul {
     list-style-type: none;
 }
 
-a {
+a, a:hover {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+.title {
+    font-family: Bernadette;
 }
 
 .top-bar {

@@ -5,8 +5,8 @@ class Nav extends React.Component{
     render(){
         return(
           <nav>
-                <ul className="top-bar">
-                      <li className="top-bar-left">
+                <ul className="top-bar" >
+                      <li className="top-bar-left title">
                             <Link to='/'>Home</Link>
                       </li>
                       <li className="top-bar-right">
