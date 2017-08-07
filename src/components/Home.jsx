@@ -1,26 +1,21 @@
 var React = require('react');
+var Link = require('react-router-dom').Link;
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            users: []
+            games: []
         }
     }
-
-componentDidMount() {
-    fetch('/users')
-        .then(res => res.json())
-        .then(users => this.setState({ users }));
-  }
 
     render() {
         return (
                     <div className="container">
                         <h1 className="title">Scavenger</h1>
-                        {this.state.users.map(user =>
-                            <div key={user.id}>{user.username}</div>
-                        )}
+                        <p>Let's play scavenger hunt! You can start a new game or find an exisiting game.</p>
+                        <Link to='/new' className="title">New Game?</Link>
+                        <h3 className="title">Find Game?</h3>
                     </div>
         );
     }
