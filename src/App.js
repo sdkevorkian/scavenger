@@ -16,6 +16,9 @@ class App extends React.Component {
                 <Switch>
                         <Route exact path='/' component={Home} />
                         <Route exact path='/new' component = {NewGamePage} />
+                        <Route exact path='/:id/tasks' render={function(){
+                            return <p>redirected</p>
+                        }} />
                         <Route render={function(){
                             return <p>Not found</p>
                         }} />

@@ -13,6 +13,7 @@ class NewGamePage extends React.Component {
             }
         };
         this.formChangeHandler = this.formChangeHandler.bind(this);
+        this.submitForm = this.submitForm.bind(this);
         this.splitTeams = this.splitTeams.bind(this);
     }
 
@@ -46,7 +47,7 @@ class NewGamePage extends React.Component {
                 <div className="container">
                     <h1 className="title">New Game</h1>
                     <NewGameForm
-                        onSubmit = ''
+                        onSubmit = {this.submitForm}
                         onChange = {this.formChangeHandler}
                         game = {this.state.game}
                         splitTeams = {this.splitTeams}

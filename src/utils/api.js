@@ -1,12 +1,14 @@
 var axios = require('axios');
 
 function createNewGame(game) {
+    console.log('about to post');
     axios.post('/games', {
         game: game
     }).then(function(res){
-        console.log(res);
+        var gameId = res.data;
+        window.location.href = `/${gameId}/tasks`;
     }).catch(function(err){
-        console.log(err);
+        return err;
     });
 }
 

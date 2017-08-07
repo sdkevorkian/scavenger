@@ -13,14 +13,21 @@ router.get('/', function(req, res, next) {
   }]);
 });
 
-router.post('/games', function(req, res){
-    Game.create({game})
-        .then(function(res){
-            res.send("game created!");
-        })
-        .catch(function(err){
-            res.send(err);
-        });
+router.post('/', function(req, res){
+    var game = req.body.game;
+
+    var newGame = new Game({
+        name: game.name,
+        event: game.event,
+        teams: game.teams
+    });
+    newGame.save(function(err){
+        if(err) {
+            res.send("fail");
+        } else {
+            res.send(newGame._id);
+        }
+    });
 });
 
 module.exports = router;
